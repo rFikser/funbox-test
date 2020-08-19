@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
+$main-color: #1698d9;
+$selected-color: #d91667;
+$disabled-color: #b3b3b3;
+$disabled-text-color: #ffff66;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+.disabled-text {
+  color: $disabled-text-color;
+}
+.pink-text {
+  color: #E62E7A !important;
+  font-weight: bold !important;
+}
+body {
+  background: url(./image/background.png);
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: "Exo 2", sans-serif;
+  font-size: 36px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 1px 1px #000000;
+}
+
+.card-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card-wrapper {
+  position: relative;
+  height: 510px;
+  max-width: 320px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.card-inner {
+  position: relative;
+  height: 500px;
+  background: #f2f2f2;
+  border: 4px solid $main-color;
+  border-radius: 12px;
+  z-index: 2;
+  &-selected {
+    border: 4px solid $selected-color;
+  }
+  &-disabled {
+    border: 4px solid $disabled-color;
+  }
+}
+
+.card-background {
+  position: absolute;
+  background-image: url("./image/cat.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 9px;
+  z-index: 2;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 0 60px 0 40px;
+}
+.card-title {
+  margin-top: 21px;
+  min-width: 220px;
+  color: #666666;
+}
+
+.card-name {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.card-type {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.card-number {
+  margin-top: 15px;
+  color: #666666;
+  min-width: 250px;
+}
+
+.card-weight {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  right: 20px;
+  bottom: 50px;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  border-radius: 50%;
+  background: $main-color;
+  color: #fff;
+  z-index: 1000000;
+  &-selected {
+    background: $selected-color;
+  }
+  &-disabled {
+    background: $disabled-color;
+  }
+}
+
+.count {
+  margin-top: 2px;
+  font-size: 42px;
+}
+.dimension {
+  font-size: 22px;
+  margin-top: -8px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.card-buy-link {
+  color: #1698d9;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .card-wrapper:last-child {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+
+  .card-wrapper:not(:first-child) {
+    margin-top: 40px;
+  }
+}
